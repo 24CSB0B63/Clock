@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Clock with Alarm</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock Pro Max</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="header">Clock 15 Pro Max</h1>
-        <div class="clock">
-            <p id="time">00:00:00 AM</p>
-            <p id="date"></p>
-        </div>
-        
-        <div class="alarm-section">
-            <h2>Set Alarm</h2>
-            <input type="time" id="alarm-time">
-            <button id="set-alarm">Set Alarm</button>
-            <button id="clear-alarm">Clear Alarm</button>
-        </div>
-
-        <div class="stopwatch">
-            <h2>Stopwatch</h2>
-            <span id="stopwatch-display">00:00:00</span>
-            <button id="start-stopwatch">Start</button>
-            <button id="pause-stopwatch">Pause</button>
-            <button id="reset-stopwatch">Reset</button>
-        </div>
-
-        <div class="countdown-timer">
-            <h2>Countdown Timer</h2>
-            <input type="number" id="countdown-input" placeholder="Enter seconds">
-            <button id="start-timer">Start</button>
-            <span id="countdown-display">00:00</span>
-        </div>
-
-        <div class="theme-switcher">
-            <h2>Theme</h2>
-            <button data-theme="light">Light</button>
-            <button data-theme="dark">Dark</button>
-            <button data-theme="neon">Neon</button>
-        </div>
+  <div class="container">
+    <h1 id="header">Clock 15 Pro Max</h1>
+    <div class="clock">
+      <p id="time">00:00:00 AM</p>
+      <p id="date"></p>
     </div>
-    <script src="clock.js"></script>
+    <div class="alarm-section">
+      <h2>Set Alarm</h2>
+      <input type="time" id="alarm-time">
+      <button id="set-alarm">Set Alarm</button>
+      <button id="clear-alarm">Clear Alarms</button>
+    </div>
+    <div class="alarm-list-section">
+      <h2>Alarm List</h2>
+      <ul id="alarm-list"></ul>
+    </div>
+    <div class="stopwatch">
+      <h2>Stopwatch</h2>
+      <span id="stopwatch-display">00:00:00</span>
+      <button id="start-stopwatch">Start</button>
+      <button id="pause-stopwatch">Pause</button>
+      <button id="reset-stopwatch">Reset</button>
+    </div>
+    <div class="countdown-timer">
+      <h2>Countdown Timer</h2>
+      <input type="number" id="countdown-input" placeholder="Enter seconds">
+      <button id="start-timer">Start</button>
+      <span id="countdown-display">00:00</span>
+    </div>
+    <br><br>
+    <label for="theme-selector">Select Theme:</label>
+    <select id="theme-selector">
+      <option value="dark">Dark Mode</option>
+      <option value="light">Light Mode</option>
+      <option value="neon">Neon Mode</option>
+    </select>
+  </div>
+  <script src="clock.js"></script>
 </body>
 </html>
