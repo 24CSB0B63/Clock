@@ -3,65 +3,82 @@ body {
     text-align: center;
     background-image: url(https://static.vecteezy.com/system/resources/previews/011/208/814/original/technology-background-analog-clock-time-vector.jpg);
     transition: background 0.5s, color 0.5s;
-}
-.container {
+  }
+  .container {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
-}
-.clock {
+  }
+  .clock {
     font-size: 2rem;
     font-weight: bold;
-}
-button {
+  }
+  #movie-list {
+    font-size: 50px;
+    color: red;
+  }
+  button {
     padding: 8px 15px;
     margin: 5px;
     cursor: pointer;
-}
-.neon {
+  }
+  .neon {
     color: rgb(119, 255, 0);
     text-shadow: 0 0 10px rgb(132, 255, 0);
-}
-.neon #header{
+  }
+  .neon #header {
     color: rgb(255, 0, 0);
     text-shadow: 0 0 10px rgb(255, 0, 0);
-}
-.neon .container {
+  }
+  .neon .container {
     background-color: black;
-}
-.dark {
+  }
+  .dark {
     color: rgb(33, 34, 33);
-}
-.dark .container {
+  }
+  .dark .container {
     background-color: rgb(87, 93, 118);
-}
-.light {
+  }
+  .light {
     color: rgb(0, 0, 0);
-}
-.light .container{
+  }
+  .light .container {
     background-color: rgb(179, 184, 205);
-}
-@keyframes blink {
+  }
+  @keyframes blink {
     50% { opacity: 0; }
-}
-@keyframes shake {
+  }
+  @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25%, 75% { transform: translateX(-5px); }
     50% { transform: translateX(5px); }
-}
-.blinking {
+  }
+  .blinking {
     animation: blink 1s infinite;
-}
-.shaking {
+  }
+  .shaking {
     animation: shake 0.5s 10;
-}
-#time {
+  }
+  #time {
     font-size: 50px;
     background: linear-gradient(to right, rgb(101, 183, 122), rgb(124, 124, 176), rgb(208, 130, 130));
     border-radius: 15px;
-}
-#header {
+  }
+  #header {
     font-size: 60px;
     font-family: sans-serif;
-}
+  }
+  #alarm-list {
+    font-size: 24px;
+    color: rgb(92, 131, 134);
+    list-style-type: none;
+    font-weight: 600;
+    padding: 0;
+  }
+  #alarm-list li {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  
