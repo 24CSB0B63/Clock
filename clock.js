@@ -5,7 +5,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const alarmInput = document.getElementById("alarm-time");
     const setAlarmBtn = document.getElementById("set-alarm");
     const clearAlarmBtn = document.getElementById("clear-alarm");
+    const themeSelector = document.getElementById("theme-selector");
+    const alarmList = document.getElementById("alarm-list");
     let alarms = [];
+    function renderAlarmList() {
+        alarmList.innerHTML = "";
+        alarms.forEach((alarm, index) => {
+            const li = document.createElement("li");
+            li.textContent = alarm;
+            li.addEventListener("click", () => {
+                deleteAlarm(index);
+            });
+            alarmList.appendChild(li);
+        });
+    }
+    function deleteAlarm(index) {
+        alarms.splice(index, 1);
+        renderAlarmList();
+    }
     function updateClock() {
         let now = new Date();
         let hours = now.getHours();
@@ -19,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (alarms.includes(`${hours}:${minutes}`)) {
             timeDisplay.classList.add("shaking");
             alarms = alarms.filter(time => time !== `${hours}:${minutes}`);
+            renderAlarmList();
             setTimeout(() => {
                 timeDisplay.classList.remove("shaking");
             }, 5000);
@@ -33,11 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (!alarms.includes(alarmInput.value)) {
             alarms.push(alarmInput.value);
+            renderAlarmList();
         }
         alert(`✅ Alarm set for ${alarmInput.value}`);
     });
     clearAlarmBtn.addEventListener("click", () => {
         alarms = [];
+        renderAlarmList();
         alert("❌ All alarms cleared.");
     });
     let stopwatchTime = 0, stopwatchInterval;
@@ -91,9 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 1000);
     });
-    document.querySelectorAll(".theme-switcher button").forEach(button => {
-        button.addEventListener("click", () => {
-            document.body.className = button.dataset.theme;
-        });
+    themeSelector.addEventListener("change", () => {
+        document.body.className = themeSelector.value;
     });
 });
